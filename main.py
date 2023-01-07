@@ -19,6 +19,7 @@ letters_correct = 0
 
 check_word = 0
 print(check_word)
+#Above here is all setup
 
 
 
@@ -51,7 +52,7 @@ def win_check():
 
 def main():
     letter_check()
-    
+
     win_check()
     
 
