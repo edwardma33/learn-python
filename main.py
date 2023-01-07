@@ -2,10 +2,7 @@ import random
 
 words = ["camel", "mantis", "hello", 'world']
 
-#picked_word = words[random.randint(0, len(words) - 1)]
-
-picked_word = words[0]
-print(picked_word)
+picked_word = words[random.randint(0, len(words) - 1)]
 
 
 final_word = []
@@ -18,25 +15,34 @@ lives_left = 6
 letters_correct = 0
 
 check_word = 0
-print(check_word)
+
+lost_life_condition = []
+for i in final_word:
+    lost_life_condition.append("nope")
+
+
 #Above here is all setup
 
 
 
 def letter_check():
+    global lost_life_condition
     global lives_left
-    global check_word 
+    global check_word
+    global picked_word
+
+    lost_life_check = []
 
     picked_letter = input("Pick a letter: ")
 
     for i in picked_word:
-        if picked_letter == i:
-            final_word[picked_word.index((i))] = f"{i}"
-            check_word += 1
-            print(f"letters_correct: {check_word}")
+        if i == picked_letter:
+            final_word[picked_word.index(i)] = i
         else:
-            lives_left -= 1
-            print(f"Lives: {lives_left}")
+            lost_life_check.append("nope")
+    
+    if lost_life_check == lost_life_condition:
+        lives_left -= 1
             
     print(final_word)
 
