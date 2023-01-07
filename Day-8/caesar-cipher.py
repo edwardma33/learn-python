@@ -8,4 +8,7 @@ def encrypt(word, shift):
         word[word.index(i)] = letters[letters.index(i) + int(shift)]
     print(word)
 
+def decode():
+    print("y'all hoes")
+
 encrypt(input("Write here...\n"), input("How much displacement?\n"))
