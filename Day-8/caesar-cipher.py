@@ -1,14 +1,28 @@
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+letters = "abcdefghijklmnopqrstuvwxyz"
 
-print(len(letters))
+letters_list = [*letters]
+
+letters_list += letters_list
+print(letters_list)
+
+pseudo_str = ""
+
 
 def encrypt(word, shift):
-    word = [*word]
+    global pseudo_str
+
+    if shift > 26:
+        encrypt(word, input("How much displacement?\n"))
+
     for i in word:
-        word[word.index(i)] = letters[letters.index(i) + int(shift)]
-    print(word)
+        pseudo_char = letters_list[letters_list.index(i) + int(shift)]
+        pseudo_str += pseudo_char
+    print(pseudo_str)
 
 def decode():
     print("y'all hoes")
 
 encrypt(input("Write here...\n"), input("How much displacement?\n"))
+
+
+
