@@ -34,7 +34,7 @@ def encrypt(word, shift):
              decode(pseudo_str, shift)
 
 
-if input("Would you like to encrypt or decode a message?\ne: encrypt\nor\nd: decode") == "e":
+if input("Would you like to encrypt or decode a message?\ne: encrypt\nor\nd: decode\n") == "e":
     encrypt(input("Write here...\n"), input("How much displacement?\n"))
 else:
     decode(input("Write here...\n"), input("How much displacement?\n"))
