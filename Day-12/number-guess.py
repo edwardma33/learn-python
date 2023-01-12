@@ -3,7 +3,7 @@ import random
 
 def clear():
     os.system("clear")
-
+clear()
 print("Welcome to the number guessing game!")
 
 while input("Would you like to play? [y/n]: ") == "y":
