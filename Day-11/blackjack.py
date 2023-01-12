@@ -24,7 +24,11 @@ while player_chips > 0 and input("Would you like to play a game? [y/n]: ") == "y
     if bet > player_chips:
         bet = player_chips
     player.append(cards[random.randint(0, len(cards) - 1)])
+    if player[0] == 11:
+        player[0] = int(input("Ace, would you like it to be 11, or 1: "))
     player.append(cards[random.randint(0, len(cards) - 1)])
+    if player[1] == 11:
+        player[1] = int(input("Ace, would you like it to be 11, or 1: "))
     dealer.append(cards[random.randint(0, len(cards) - 1)])
 
     print(f"Your hand: {player}")
@@ -32,12 +36,16 @@ while player_chips > 0 and input("Would you like to play a game? [y/n]: ") == "y
 
     while sum(player) < 21 and input("[hit/stay]: ") == "hit":
         player.append(cards[random.randint(0, len(cards) - 1)])
+        if player[len(player) - 1] == 11:
+            player[len(player) - 1] = int(input("Ace, would you like it to be 11, or 1: "))
         print(f"Your hand: {player}")
         print(f"Dealer hand: {dealer}")
         
     
     while sum(dealer) < 17 and sum(dealer) < 21 and sum(player) <= 21:
         dealer.append(cards[random.randint(0, len(cards) - 1)])
+        if dealer[len(dealer) - 1] == 11 and sum(dealer) > 10:
+            dealer[len(dealer) - 1] = 1
         print(f"Your hand: {player}")
         print(f"Dealer hand: {dealer}")
     
