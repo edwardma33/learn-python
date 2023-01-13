@@ -3,13 +3,13 @@ import sys
 os.system('clear')
 os.chdir('../')
 
-day_num = int(input('What day is it? '))
+day_num = input('What day is it? ')
 
-if type(day_num) != type(1):
-    print("Error")
-    sys.exit()
-
-new_dir = f"Day-{day_num}"
+if len(day_num) != 0:
+    new_dir = f"Day-{day_num}"
+else:
+    new_dir = input("Directory name: ")
+    day_num = f'-{new_dir}'
 
 def proj_name_format(proj_name):
     proj_name = [*proj_name]
