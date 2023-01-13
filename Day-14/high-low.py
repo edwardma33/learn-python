@@ -13,7 +13,7 @@ score = 0
 answer = 999 
 prev_winner = ""
 
-while score >=0 and (score > 0 or input("Would you like to play? [y/n]: ") == "y"):
+while score >= 0 and (score > 0 or input("Would you like to play? [y/n]: ") == "y"):
     if score != 0:
         person_1 = data[data.index(prev_winner)]
     else:
