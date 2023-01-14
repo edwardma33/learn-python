@@ -9,6 +9,7 @@ def pick_word():
 
 picked_word = pick_word()
 picked_word = [*picked_word]
-
-
 print(picked_word)
+
+while input("Would you like to play?: [y/n]; ") == "y":
+    
