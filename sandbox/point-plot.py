@@ -5,17 +5,17 @@ clear()
 
 grid = []
 
-for i in range(0, 10):
+for i in range(0, 10 + 1):
     grid.append([])
 
 print(len(grid))
 
 for i in range(0, len(grid)):
-    for i in range(0, 10):
+    for i in range(0, 11):
         grid[i].append("_")
 
 def plot_point(x, y):
-    grid[y][x] = "o"
+    grid[-y + len(grid)][x] = "o"
     
 
 while input("Would you like to plot a point? [y/n]: ") == "y":
