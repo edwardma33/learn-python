@@ -2,9 +2,10 @@ import os
 def clear():
     os.system('clear')
 clear()
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
 import random
 
+colormode(255)
 tim = Turtle()
 tim.color('green')
 tim.pensize(6)
@@ -46,7 +47,7 @@ def draw_shape_2(sides):
     angle = 360 / sides
     
     for i in range(sides):
-        tim.color(colors[random.randint(0, len(colors) - 1)])
+        tim.color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         tim.forward(100)
         tim.right(angle)
 
@@ -57,7 +58,7 @@ def draw_all_2():
 # Challenge 4: Create a random walk
 def gen_rand_walk(iterations):
     for i in range(iterations):
-        tim.color(colors[random.randint(0, len(colors) - 1)])
+        tim.color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         tim.right(random.randint(0, 360))
         tim.forward(40)
 
