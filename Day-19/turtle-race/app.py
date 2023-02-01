@@ -46,7 +46,19 @@ def all_move():
 def main():
     draw_f_line()
     start_pos()
+    far = 0
+    while far < 250:
+        for i in racers:
+            if i.xcor() - far > 0:
+                far = i.xcor()
+            else:
+                racers.pop(racers.index(i))
+        if far >= 250:
+            print("W")
+        else:
+            all_move()
 
+    
 
 main()
 
